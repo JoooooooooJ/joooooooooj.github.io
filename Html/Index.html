@@ -5,55 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="css/style.css" rel="stylesheet">
+    <title>Sign in to GitHub » GitHub</title>
 </head>
-<title>Github dos Crias</title>
-
 <body>
-    <div>
-        <img src="https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2020/06/github.jpg">
+<div class="header">
+    <img alt="logo" src="http://pngimg.com/uploads/github/github_PNG40.png">
+</div>
+<main class="login">
+    <h1 class="sign-in-title">Sign in to GitHub</h1><br>
+    <div class="login-body">
+        <label class="login-label" for="user">
+            Username or email address
+        </label>
+        <input class="login-input" id="user" size="40" type="text"/>
+
+        <div class="p-relative">
+            <label class="login-label" for="password">
+                Password
+                <a href="https://github.com/password_reset">Forgot password?</a>
+            </label>
+            <input class="login-input" id="password" size="40" type="password"/>
+            <button class="sign-in-button" name="Sign in" type="submit">Sign in</button>
+        </div>
     </div>
-
-    <h3>Sign into GitHub</h3><br>
-    <h3>to continue to GithubLogin</h3>
-
-    <fieldset>
-        <div>
-            <h5>
-                <label>Username or email address</label>
-            </h5>
-            <input type="text" name="User" size="40" />
-        </div>
-
-        <div>
-            <h4><a href="https://github.com/password_reset">Forgot password?</a></h4>
-
-        </div>
-
-        <div>
-            <h5>
-                <label>Password</label>
-            </h5>
-            <input type="text" name="password" size="40" />
-        </div>
-        <br>
-
-        <div>
-            <button type="submit" name="Sign in">Sign in</button>
-        </div>
-
-    </fieldset>
-    <br>
-    <div>
-        <fieldset>
-            <H4>New to GitHub? <a href="https://github.com/join?source=login">Create an account</a>
-        </fieldset>
+    <div class="sing-up-card">
+        <label>New to GitHub? <a href="https://github.com/join?source=login">Create an account</a>.</label>
     </div>
-    <br><br><br>
-    <div>
-        <h5><a href="https://github.com/site/terms">Terms</a><a href="https://github.com/site/privacy">Privacy</a><a href="https://docs.github.com/articles/github-security/">Security</a>
-            <a href="https://github.com/contact">Contact</a></h5>
-    </div>
+</main>
+<div class="footer">
+    <ul>
+        <li><a href="https://github.com/site/terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy">Privacy</a></li>
+        <li><a href="https://docs.github.com/articles/github-security/">Security</a></li>
+        <li><a class='secondary' href="https://github.com/contact">Contact GitHub</a></li>
+    </ul>
+</div>
 </body>
-
 </html>
