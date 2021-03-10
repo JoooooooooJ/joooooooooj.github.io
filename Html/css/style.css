@@ -51,11 +51,14 @@ a {
 }
 
 .login-body {
-    border-radius: 5px;
     margin-top: 16px;
     background-color: #f6f8fa;
     border: 1px solid #eaecef;
     padding: 20px;
+}
+
+.round-border {
+    border-radius: 5px;
 }
 
 .login-label {
@@ -99,7 +102,6 @@ a {
 
 .sing-up-card {
     padding: 15px 20px;
-    border-radius: 5px;
     border: 1px solid #eaecef;
     text-align: center;
     width: 100%;
