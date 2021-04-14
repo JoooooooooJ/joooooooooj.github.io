@@ -9,12 +9,12 @@
     <link href="style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(() => {
             const token = localStorage.getItem("token")
             if (!token) {
-                window.open("../joooooooooj.github.io/login.html", "_self")
+                window.open("../index.html", "_self")
             } else {
-                window.open("/home.html")
+                window.open("../index.html", "_self")
             }
         })
     </script>
