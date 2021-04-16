@@ -17,7 +17,17 @@ body {
     color: #ddd display: block;
 }
 
+#menu li u {
+    padding: 12px;
+    text-decoration: none;
+    color: #ddd display: block;
+}
+
 #menu li a:hover {
+    background-color: #eee;
+}
+
+#menu li u:hover {
     background-color: #eee;
 }
 
@@ -32,7 +42,20 @@ body {
     border: 1px solid #ddd;
 }
 
+#searchUser{
+    width: 100%;
+    font-size: 18px;
+    padding: 11px;
+    border: 1px solid #ddd;
+}
+
 #menu {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+#menuUser {
     list-style-type: none;
     padding: 0px;
     margin: 0px;

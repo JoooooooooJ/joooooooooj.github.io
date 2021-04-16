@@ -8,13 +8,24 @@
     <title>Repository search</title>
     <link type="text/css" rel="stylesheet" href="search.css">
     <script src="search.js"></script>
+    <script src="searchUser.js"></script>
 </head>
 
 <body>
+    
+    <p>TOU ARE LOGGED IN CONGRATS </p>
+    <button id="logout">LOG OUT</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $("#logout").on('click', () => {
+            localStorage.removeItem("token")
+            window.open("../index.html", "_self")
+        })
+    </script>
+
     <nav class="menuContainer borda">
         <h2>Pesquisa de Repositórios</h2>
-        <input type="text" id="search" onkeyup="pesquisar()" placeholder="Search" title="Digite
-         algum repositório desejado">
+        <input type="text" id="search" onkeyup="pesquisar()" placeholder="Search" title="Digite algum repositório desejado">
         <ul id="menu">
             <br>
             <li><a href="#">CESAR</a></li>
@@ -22,6 +33,19 @@
             <li><a href="#">WATINHA</a></li>
             <li><a href="#">EUNHA</a></li>
             <li><a href="#">CHUVINHA</a></li>
+        </ul>
+    </nav>
+
+    <nav class="menuContainer borda">
+        <h2>Pesquisa de Usuários</h2>
+        <input type="text" id="searchUser" onkeyup="user()" placeholder="Search" title="Digite o usuário desejado">
+        <ul id="menuUser">
+            <br>
+            <li><u href="#">CESAR</u></li>
+            <li><u href="#">NANDIN</u></li>
+            <li><u href="#">WATINHA</u></li>
+            <li><u href="#">EUNHA</u></li>
+            <li><u href="#">CHUVINHA</u></li>
         </ul>
     </nav>
 </body>
