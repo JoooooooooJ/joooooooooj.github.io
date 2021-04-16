@@ -22,15 +22,9 @@ body {
     text-decoration: none;
     color: #ddd display: block;
 }
-
-#menu li a:hover {
-    background-color: #eee;
-}
-
 #menu li u:hover {
     background-color: #eee;
 }
-
 .menuContainer h2 {
     padding-left: 10px;
 }
@@ -54,6 +48,7 @@ body {
     padding: 0px;
     margin: 0px;
 }
+
 
 #menuUser {
     list-style-type: none;
