@@ -1,4 +1,3 @@
-
 var timer = null
 
 function pesquisar() {
@@ -11,9 +10,10 @@ function pesquisar() {
             contentType: "application/json; charset=utf-8",
             success: (data) => {
                 console.log(data)
+                var ul = document.getElementById("menu");
+                ul.innerHTML = ''
                 data.items.forEach(item => {
                     console.log(item)
-                    var ul = document.getElementById("menu");
                     var li = document.createElement("li");
                     li.innerHTML = `<a href="${item.html_url}">${item.full_name}</a>`
                     ul.appendChild(li);
