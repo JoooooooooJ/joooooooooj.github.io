@@ -14,7 +14,7 @@ $(document).ready(() => {
             contentType: "application/json; charset=utf-8",
             success: (data) => {
                 localStorage.setItem("token", data.token)
-                window.open("../index.html", "_self")
+                window.open("../joooooooooj.github.io/index.html", "_self")
             },
             error: (data) => {
                 const errorbox = $("#error-message")
