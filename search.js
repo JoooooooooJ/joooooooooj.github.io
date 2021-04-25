@@ -2,7 +2,7 @@ var timer = null
 
 function pesquisar() {
     var search = $("#search").val()
-    if(search.lenght > 3){
+    if(search.toString().lenght > 3){
     var request = () => {
         $.ajax({
             type: "GET",
