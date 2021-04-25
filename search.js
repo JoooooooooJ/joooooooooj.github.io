@@ -2,6 +2,7 @@ var timer = null
 
 function pesquisar() {
     var search = $("#search").val()
+    if(search.lenght > 3){
     var request = () => {
         $.ajax({
             type: "GET",
@@ -26,4 +27,5 @@ function pesquisar() {
     }
     clearTimeout(timer);
     timer = setTimeout(request, 500);
+}
 }
