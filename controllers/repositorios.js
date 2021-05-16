@@ -10,6 +10,12 @@ module.exports = app => {
 
         Repositorios.buscaPorId(id, res)
     })
+    
+     app.get('/repositorios/:search', (req, res) => {
+    	const search = parseString(req.params.search)
+
+        Repositorios.searchString(search, res)
+    })
 
     app.post('/repositorios', (req, res) => {
         const atendimento = req.body
