@@ -3,7 +3,6 @@ const conexao = require('./banco/conexao')
 const Tabelas = require('./banco/tabelas')
 const Repositorio = require('./models/model-repositorios')
 const express = require("express")
-const userController = require('./controllers/user')
 
 conexao.connect(erro => {
     if (erro) {
