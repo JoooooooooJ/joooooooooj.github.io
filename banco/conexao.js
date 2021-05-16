@@ -5,7 +5,7 @@ const conexao = mysql.createConnection({
     port: 3307,
     user: 'root',
     password: 'admin',
-    database: 'watinha-github'
+    database: 'githubclone'
 })
 
 module.exports = conexao

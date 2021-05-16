@@ -1,4 +1,4 @@
-const Repositorios = require('../models/repositorios')
+const Repositorios = require('../models/model-repositorios')
 
 module.exports = app => {
     app.get('/repositorios', (req, res) => {
@@ -12,8 +12,8 @@ module.exports = app => {
     })
 
     app.post('/repositorios', (req, res) => {
-       const atendimento = req.body
+        const atendimento = req.body
 
         Repositorios.add(atendimento, res)
-    }) 
+    })
 }
