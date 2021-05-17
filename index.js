@@ -3,6 +3,7 @@ const conexao = require('./banco/conexao')
 const Tabelas = require('./banco/tabelas')
 const Repositorio = require('./models/model-repositorios')
 const express = require("express")
+const PORT = process.env.PORT || 3000
 
 conexao.connect(erro => {
     if (erro) {
@@ -15,6 +16,6 @@ conexao.connect(erro => {
         const app = customExpress()
 
         app.use("/", express.static(__dirname))
-        app.listen(3000, () => console.log('Servidor rodando na porta 3000'))
+        app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`))
     }
 })
