@@ -1,6 +1,6 @@
 const mysql = require('mysql')
 
-let conexao
+let conexao;
 
 if (process.env.CLEARDB_DATABASE_URL) {
     conexao = mysql.createConnection(process.env.CLEARDB_DATABASE_URL)
