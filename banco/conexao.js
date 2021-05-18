@@ -1,11 +1,17 @@
 const mysql = require('mysql')
 
-const conexao = mysql.createConnection({
-    host: 'us-cdbr-east-03.cleardb.com',
-    port: 3306,
-    user: 'bb7e9c26b4974f',
-    password: '7cd5642f',
-    database: 'heroku_08995d090e27831'
-})
+let conexao
+
+if (process.env.CLEARDB_DATABASE_URL) {
+    conexao = mysql.createConnection(process.env.CLEARDB_DATABASE_URL)
+} else {
+    conexao = mysql.createConnection({
+        host: 'localhost',
+        port: 3307,
+        user: 'root',
+        password: 'admin',
+        database: 'githubclone'
+    })
+}
 
 module.exports = conexao
