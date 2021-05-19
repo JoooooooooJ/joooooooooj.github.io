@@ -8,15 +8,17 @@ module.exports = app => {
     app.post("/api/login", (req, res) => {
         console.log(req.body)
         const userBody = req.body
-        const response = service.login(userBody.username, userBody.password)
-        if (response.token) {
-            res.status(200).json({
-                body: { token: response.token }
-            })
-        }
-        if (response.message) {
-            res.status(500).json({ message: response.message })
-        }
+        service.login(userBody.username, userBody.password, response => {
+            if (response.token) {
+                res.status(200).json({
+                    body: { token: response.token }
+                })
+            } else if (response.message) {
+                res.status(400).json({ message: response.message })
+            } else {
+                res.status(500).json({ message: "Ocorreu um erro inesperado" })
+            }
+        })
     })
 
     app.post("/api/createUser", (req, res) => {
