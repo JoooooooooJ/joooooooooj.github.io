@@ -3,7 +3,7 @@ const conexao = require('../banco/conexao');
 const jwt = require('jsonwebtoken')
 const uuid = require('uuid')
 
-const global_key_encrypt = uuid.v4()
+const global_key_encrypt = process.env.GLOBAL_JWT_ENCRYPT || uuid.v4()
 const saltRounds = 10;
 
 module.exports = conexao => {
