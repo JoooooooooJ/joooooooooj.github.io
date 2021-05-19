@@ -12,10 +12,10 @@ conexao.connect(erro => {
         console.log('conectado com sucesso')
 
         Tabelas.init(conexao)
-
-        const app = customExpress()
-
-        app.use("/", express.static(__dirname))
-        app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`))
     }
 })
+
+const app = customExpress()
+
+app.use("/", express.static(__dirname))
+app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`))
