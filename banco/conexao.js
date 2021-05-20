@@ -23,10 +23,10 @@ let db = {
 }
 
 if (process.env.CLEARDB_DATABASE_URL) {
-    conexao = mysql.createConnection(process.env.CLEARDB_DATABASE_URL)
+    db.conexao = mysql.createConnection(process.env.CLEARDB_DATABASE_URL)
 
 } else {
-    conexao = mysql.createConnection(dev_db_value)
+    db.conexao = mysql.createConnection(dev_db_value)
 }
 
 module.exports = db

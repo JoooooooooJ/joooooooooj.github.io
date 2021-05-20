@@ -1,5 +1,4 @@
 const bcrypt = require('bcrypt');
-const conexao = require('../banco/conexao');
 const jwt = require('jsonwebtoken')
 const uuid = require('uuid')
 

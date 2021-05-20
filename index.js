@@ -1,7 +1,6 @@
 const customExpress = require('./config/custom-express')
 const db = require('./banco/conexao')
 const Tabelas = require('./banco/tabelas')
-const Repositorio = require('./models/model-repositorios')
 const express = require("express")
 const PORT = process.env.PORT || 3000
 const conexao = db.conexao
