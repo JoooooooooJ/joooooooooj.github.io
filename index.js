@@ -14,7 +14,6 @@ conexao.connect(erro => {
         Tabelas.init(conexao)
     }
 })
-
 const app = customExpress()
 
 app.use("/", express.static(__dirname))
