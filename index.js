@@ -12,11 +12,15 @@ conexao.connect(erro => {
 
         Tabelas.init(conexao)
     }
-    conexao.on()
 })
 
-//manter conexão viva
-setInterval(function() { conexao.query('SELECT 1'); }, 5000);
+setInterval(() => {
+    conexao.query('SELECT 1',
+        (err, result, field) => {
+            console.log("application heartbeat...")
+        }
+    )
+}, 5000);
 
 const app = customExpress()
 
