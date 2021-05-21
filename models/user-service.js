@@ -17,7 +17,7 @@ module.exports = conexao => {
                         callback({ message: err })
                     } else if (Array.isArray(result) && result.length !== 0) {
                         console.log(result[0])
-                        bcrypt.compare(password, result[0].senha, function(err, res) {
+                        bcrypt.compare(password, result[0].password, function(err, res) {
                             if (err) {
                                 console.log(err)
                                 callback({ message: err })
