@@ -1,25 +1,41 @@
 const Repositorios = require('../models/model-repositorios')
+const jwt = require('jsonwebtoken')
+
+
+const global_key_encrypt = require('../models/secret-key')
 
 module.exports = app => {
-    app.get('/repositorios', (req, res) => {
-        Atendimento.lista(res)
-    })
-
-    app.get('/repositorios/:id', (req, res) => {
-        const id = parseInt(req.params.id)
-
-        Repositorios.buscaPorId(id, res)
-    })
-    
-     app.get('/repositorios/:search', (req, res) => {
-    	const search = parseString(req.params.search)
-
-        Repositorios.searchString(search, res)
-    })
-
     app.post('/repositorios', (req, res) => {
-        const atendimento = req.body
+        const token = req.header("token")
+        jwt.verify(token, global_key_encrypt, (err, decoded => {
+            if (err) {
+                res.status(400).json({message: err})
+            } else {
+                if (decoded.type && decoded.type === 'ADMIN') {
+                    //  todo fazer a criação do repositório aqui
+                    console.log('teste')
+                } else if (decoded.type) {
+                    res.status(400).json({ message: 'USUÁRIO NÃO TEM PERMISSÃO PARA REALIZAR ESSA AÇÃO' })
+                } else {
+                    res.code(400).json({ message: 'TOKEN INVÁLIDO' })
+                }
+            }
+        }))
+    })
 
-        Repositorios.add(atendimento, res)
+    app.get('/repositorios/search', (req, res) => {
+        const token = req.header("token")
+        jwt.verify(token, global_key_encrypt, (err, decoded => {
+            if (err) {
+                res.status(400).json({message: err})
+            } else {
+                if (decoded) {
+                    //  todo fazer a criação do repositório aqui
+                    console.log('teste')
+                } else {
+                    res.code(400).json({ message: 'TOKEN INVÁLIDO' })
+                }
+            }
+        }))
     })
 }
