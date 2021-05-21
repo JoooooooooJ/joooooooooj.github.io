@@ -10,17 +10,18 @@ $(document).ready(() => {
             response.removeClass("d-none")
             response.html("INFORME UM NOME VALIDO PARA O REPOSITORIO")
         } else {
+            var token = localStorage.getItem("token")
             console.log(reponame)
             $.ajax({
                 type: "POST",
-                url: `/api/repository`,
+                url: `/api/repositorios`,
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
-                data: {
-                    name: reponame
-                },
-                Headers: {
-                    token: localStorage.getItem("token")
+                data: JSON.stringify({
+                    "name": reponame
+                }),
+                beforeSend: (request) => {
+                    request.setRequestHeader("token", token);
                 },
                 success: (data) => {
                     if (data.message) {
@@ -43,7 +44,7 @@ function pesquisar() {
         var request = () => {
             $.ajax({
                 type: "GET",
-                url: `https://api.github.com/search/repositories?q=${search}`,
+                url: `/api/repositorios/search?q=${search}`,
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: (data) => {
