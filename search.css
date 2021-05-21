@@ -1,61 +1,87 @@
-body {
-    font-family: Arial;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-.menuContainer {
-    width: 300px;
-    padding: 15px 0px;
-}
-
-#menu li a {
-    padding: 12px;
-    text-decoration: none;
-    color: #ddd display: block;
-}
-
-#menu li u {
-    padding: 12px;
-    text-decoration: none;
-    color: #ddd display: block;
-}
-#menu li u:hover {
-    background-color: #eee;
-}
-.menuContainer h2 {
-    padding-left: 10px;
-}
-
-#search {
-    width: 100%;
-    font-size: 18px;
-    padding: 11px;
-    border: 1px solid #ddd;
-}
-
-#searchUser{
-    width: 100%;
-    font-size: 18px;
-    padding: 11px;
-    border: 1px solid #ddd;
-}
-
-#menu {
-    list-style-type: none;
-    padding: 0px;
-    margin: 0px;
-}
-
-
-#menuUser {
-    list-style-type: none;
-    padding: 0px;
-    margin: 0px;
-}
-
-.borda {
-    border: 2px solid #ddd;
-}
+    body {
+        font-family: Arial;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    .menuContainer {
+        width: 300px;
+        padding: 15px 0px;
+    }
+    
+    #menu li a {
+        padding: 12px;
+        text-decoration: none;
+        color: #ddd;
+        display: block;
+    }
+    
+    #menu li u {
+        padding: 12px;
+        text-decoration: none;
+        color: #ddd;
+        display: block;
+    }
+    
+    #menu li u:hover {
+        background-color: #eee;
+    }
+    
+    .menuContainer h2 {
+        padding-left: 10px;
+    }
+    
+    #search {
+        width: 100%;
+        font-size: 18px;
+        padding: 11px;
+        border: 1px solid #ddd;
+    }
+    
+    #searchUser {
+        width: 100%;
+        font-size: 18px;
+        padding: 11px;
+        border: 1px solid #ddd;
+    }
+    
+    #menu {
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    #menuUser {
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .borda {
+        border: 2px solid #ddd;
+    }
+    
+    .add-repo {
+        padding-top: 25px;
+    }
+    
+    .card {
+        padding: 15px 20px;
+        border: 1px solid #f73d3d;
+        background-color: #df9595;
+        text-align: center;
+        width: 100%;
+        margin: 16px 0 0 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    }
+    
+    .round-border {
+        border-radius: 5px;
+    }
+    
+    .d-none {
+        display: none;
+    }

@@ -7,15 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repository search</title>
     <link type="text/css" rel="stylesheet" href="search.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="search.js"></script>
-    <script src="searchUser.js"></script>
 </head>
 
 <body>
-
-    <p>TOU ARE LOGGED IN CONGRATS </p>
     <button id="logout">LOG OUT</button>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $("#logout").on('click', () => {
             localStorage.removeItem("token")
@@ -28,6 +25,14 @@
         <input type="text" id="search" onkeyup="pesquisar()" placeholder="Search" title="Digite algum repositório desejado">
         <ul id="menu">
         </ul>
+    </nav>
+
+    <nav class="menuContainer borda add-repo">
+        <h2>Nome do Repositorio</h2>
+        <input type="text" id="repo-name" placeholder="Nome" title="Digite algum repositório desejado">
+        <button id="adicionar-repo">Adicionar +</button>
+        <br>
+        <div class="card error round-border d-none" id="response"> </div>
     </nav>
 </body>
 

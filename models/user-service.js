@@ -16,6 +16,7 @@ module.exports = conexao => {
                         console.log(err)
                         callback({ message: err })
                     } else if (Array.isArray(result) && result.length !== 0) {
+                        console.log(result[0])
                         bcrypt.compare(password, result[0].senha, function(err, res) {
                             if (err) {
                                 console.log(err)
@@ -23,8 +24,7 @@ module.exports = conexao => {
                             }
 
                             if (res) {
-                                const token = jwt.sign({ login: username }, global_key_encrypt)
-                                console.log(token)
+                                const token = jwt.sign({ login: username, type: result[0].type }, global_key_encrypt)
                                 callback({ token: token })
                             }
                         });
@@ -34,7 +34,7 @@ module.exports = conexao => {
                 })
             return response
         },
-        saveUser: (username, password, callback) => {
+        saveUser: (username, password, type, callback) => {
             bcrypt.hash(password, saltRounds, (err, hash) => {
                 console.log(err)
                 console.log(hash)
@@ -45,7 +45,7 @@ module.exports = conexao => {
                     }
                     callback(response)
                 }
-                conexao.query('INSERT INTO Users(username, senha) VALUES (?,?)', [username, hash],
+                conexao.query('INSERT INTO Users(username, password, type) VALUES (?,?,?)', [username, hash, type],
                     (err, result, field) => {
                         if (err) {
                             let response = {
@@ -54,11 +54,11 @@ module.exports = conexao => {
                             }
                             callback(response)
                         } else {
-                            let response = {
+                            const token = jwt.sign({ login: username, type: type }, global_key_encrypt)
+                            callback({
                                 success: true,
-                                message: `Usuario ${username} salvo com sucesso`
-                            }
-                            callback(response)
+                                token: token
+                            })
                         }
                     }
                 )

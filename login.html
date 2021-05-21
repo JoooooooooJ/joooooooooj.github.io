@@ -24,23 +24,35 @@
     <form class="login" id="login">
         <h1 class="sign-in-title">Sign in to GitHub</h1>
         <div class="login-body round-border">
-            <label class="login-label" for="user">
-                Username or email address
-            </label>
-            <input class="login-input" id="user" size="40" type="text" />
-
             <div class="p-relative">
+                <label class="login-label" for="user">
+                    Username or email address
+                </label>
+                <input class="login-input" id="user" size="40" type="text" />
                 <label class="login-label" for="password">
                     Password
-                    <a href="https://github.com/password_reset">Forgot password?</a>
+                    <a id="forgotpass" href="https://github.com/password_reset">Forgot password?</a>
                 </label>
                 <input class="login-input" id="password" size="40" type="password" />
+                <div id="type-box" class="d-none">
+                    Tipo de Usuário a ser criado:
+                    <br>
+                    <label class="login-label" for="password">
+                        ADMINISTRADOR
+                        <input type="radio" name="user-type" value="ADMIN" />
+                    </label>
+                    <label class="login-label" for="password">
+                        SIMPLES
+                        <input type="radio" name="user-type" value="USER" />
+                    </label>
+                </div>
                 <button class="sign-in-button" type="button" id="sign-in-button">Sign in</button>
+                <button class="sign-in-button d-none" type="button" id="register-button">Register</button>
             </div>
         </div>
         <div class="card error round-border d-none" id="error-message"> </div>
         <div class="sing-up-card round-border">
-            <label>New to GitHub? <a href="https://github.com/join?source=login">Create an account</a>.</label>
+            <label>New to GitHub? <a href='#' id="create-account">Create an account</a>.</label>
         </div>
         </main>
         <div class="footer sm-footer">

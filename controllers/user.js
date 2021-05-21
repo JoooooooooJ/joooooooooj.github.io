@@ -5,7 +5,7 @@ const service = userService(conexao)
 
 
 module.exports = app => {
-    app.post("/api/login", (req, res) => {
+    app.post("/api/user/login", (req, res) => {
         console.log(req.body)
         const userBody = req.body
         service.login(userBody.username, userBody.password, response => {
@@ -21,13 +21,13 @@ module.exports = app => {
         })
     })
 
-    app.post("/api/createUser", (req, res) => {
+    app.post("/api/user", (req, res) => {
         console.log(req.body)
         const userBody = req.body
-        service.saveUser(userBody.username, userBody.password, (response) => {
+        service.saveUser(userBody.username, userBody.password, userBody.type, (response) => {
             console.log(response)
             if (response.success) {
-                res.status(201).json()
+                res.status(201).json(response)
             } else res.status(500).json(response)
         })
     })
