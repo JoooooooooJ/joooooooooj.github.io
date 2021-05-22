@@ -16,8 +16,9 @@ module.exports = app => {
                     res.status(400).json({ message: err })
                 } else {
                     if (decoded.type && decoded.type === 'ADMIN') {
-                        //  todo fazer a criação do repositório aqui
+                        execSQLQuery(`INSERT INTO Repositorios(repositorios, dataCriacao) VALUES('${repositorios}','${dataCriacao}')`, res);
                         console.log(req.body.name)
+                        console.log('Repositorio criado com sucesso')
                     } else if (decoded.type) {
                         res.status(400).json({ message: 'USUÁRIO NÃO TEM PERMISSÃO PARA REALIZAR ESSA AÇÃO' })
                     } else {
@@ -37,8 +38,14 @@ module.exports = app => {
                 res.status(400).json({ message: err })
             } else {
                 if (decoded) {
-                    //  todo fazer a criação do repositório aqui
-                    console.log('teste')
+                    var spSearch = req.params.id;
+
+                    let repo = await Repositorios.findAll({tag: spSearch}).exec();
+                
+                    res.render('tag', {
+                        repo: repo
+                    });
+                    console.log('Tudo certinho pra gente trabalhar')
                 } else {
                     res.code(400).json({ message: 'TOKEN INVÁLIDO' })
                 }
