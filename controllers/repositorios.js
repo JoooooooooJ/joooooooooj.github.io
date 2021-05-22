@@ -16,7 +16,7 @@ module.exports = app => {
                     res.status(400).json({ message: err })
                 } else {
                     if (decoded.type && decoded.type === 'ADMIN') {
-                        execSQLQuery(`INSERT INTO Repositorios(repositorios, dataCriacao) VALUES('${repositorios}','${dataCriacao}')`, res);
+                        //execSQLQuery(`INSERT INTO Repositorios(repositorios, dataCriacao) VALUES('${repositorios}','${dataCriacao}')`, res);
                         console.log(req.body.name)
                         console.log('Repositorio criado com sucesso')
                     } else if (decoded.type) {
@@ -40,8 +40,8 @@ module.exports = app => {
                 if (decoded) {
                     var spSearch = req.params.id;
 
-                    let repo = await Repositorios.findAll({tag: spSearch}).exec();
-                
+                    //let repo = await Repositorios.findAll({tag: spSearch}).exec();
+
                     res.render('tag', {
                         repo: repo
                     });
